@@ -11,7 +11,6 @@ const client = new ApolloClient({
 
 export default function Home() {
   const [searchCountry, setSearchCountry] = useState<string>("")
-  const [errorText, setErrorText] = useState<string>("")
   return (
     <ApolloProvider client={client}>
       <Box
@@ -29,8 +28,9 @@ export default function Home() {
           alignItems="center"
           position="relative"
         >
+
           <SearchCountry searchCountry={searchCountry} setSearchCountry={setSearchCountry} />
-          <ListCountry searchCountry={searchCountry} setErrorText={setErrorText} errorText={errorText} />
+          <ListCountry searchCountry={searchCountry} />
         </Box>
       </Box>
     </ApolloProvider>
